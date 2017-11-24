@@ -1,0 +1,20 @@
+@guri:/usr/local/lib/python3.5/dist-packages/pywikibot-3.0.20171121-py3.5.egg/pywikibot$ git show HEAD
+commit bc43b8e9cb655ac7a0030f2d93d71c1446f66ea3
+Author: kamomil <dafna3@gmail.com>
+Date:   Fri Nov 24 07:45:35 2017 +0200
+
+    hack to fix annoying exception
+
+diff --git a/proofreadpage.py b/proofreadpage.py
+index 4d2dc27..e3e1246 100644
+--- a/proofreadpage.py
++++ b/proofreadpage.py
+@@ -773,6 +773,7 @@ class IndexPage(pywikibot.Page):
+             del self._parsed_text
+             self._parsed_text = self._get_parsed_page()
+             self._soup = Soup(self._parsed_text)
++            attrs = {'class': re.compile('(new|prp-pagequality)')}
+             if not self._soup.find_all('a', attrs=attrs):
+             
+                 raise ValueError(
+
