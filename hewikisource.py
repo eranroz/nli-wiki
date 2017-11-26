@@ -8,9 +8,11 @@ from pywikibot.proofreadpage import IndexPage, ProofreadPage
 import  upload_transcoded_page_bot as ubot # import UploadTranscodedPageBot
 
 def main():
-    site = pywikibot.Site('he','wikisource')
+    site = pywikibot.Site('en','wikisource')
     
-    filename = "מפתח:ספר_השרשים.pdf"
+    # filename = "מפתח:ספר_השרשים.pdf"
+    # filename = "Index:ספר_השרשים.pdf"
+    filename = "Index:Catholic_Encyclopedia,_volume_17.djvu"
     index = IndexPage(site,filename)
 
     #sql = "SELECT DISTINCT page table WHERE page = %s ORDER BY page"     
@@ -19,7 +21,7 @@ def main():
 
     gen_list = []
     #for p in c.execute(sql):
-    for p in range(1,2):
+    for p in range(6,7):
         #todo - what is content parameter ? and what should we put in filter_ql ?
         #TODO - here I get exception qualityN prp-pagequality-N" or class="new"
 

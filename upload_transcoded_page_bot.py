@@ -26,14 +26,14 @@ class UploadTranscodedPageBot(SingleSiteBot):
 
         if page.exists():
             print("page exists" )
-            return
+            # return
 
         # page.get()
         print("page status is %s " % page.status)
-        page.header = "כותרת"
-        page.footer = "זנב"
-        page.body = "ניסוי - בוט"
-        page.save()
+        page.header = u"{{rh|2|''THE POPULAR SCIENCE MONTHLY.''}}"
+        page.footer = u'\n{{smallrefs}}'
+        # page.text = " bot experiment"
+        # page.save()
         #sql = "SELECT transcode from table WHERE page = %s ORDER BY seq" % pagenum
         #conn = sqlite3.connect('example.db')
         #c = conn.cursor()
@@ -43,5 +43,17 @@ class UploadTranscodedPageBot(SingleSiteBot):
         #    text = text + data['transcode']
         #    return text
 
-        text = "bla bla"
-        self.userPut(page, page.text, text, summary="from UploadTranscodePageBot")
+        page.body  = """{{c|{{x-larger|A BID FOR FORTUNE.}}}}
+
+
+{{rule|5em}}
+
+
+{{c|{{larger|PROLOGUE.}}
+
+{{smaller|DR. NIKOLA.}}}}
+
+{{sc|The}} manager"""
+        # page.save()
+        
+        # self.userPut(page, page.text, text, summary="from UploadTranscodePageBot")
