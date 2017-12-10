@@ -26,6 +26,16 @@
       <h1>NLI-wiki collections sharing</h1>
       <p>This is a plcaeholder for tool to access NLI collections and easily share them to wiki.</p>
 
+	<h2>Scanned books</h2>
+<p>Currently only selected collection</p>
+<h3>ספר השרשים (p7)</h3>
+<a href="https://commons.wikimedia.org/wiki/File:%D7%A1%D7%A4%D7%A8_%D7%94%D7%A9%D7%A8%D7%A9%D7%99%D7%9D.pdf">Commons</a> - 
+<a href="https://he.wikisource.org/wiki/%D7%A9%D7%A8%D7%A9%D7%99%D7%9D_%D7%90%D7%95%D7%AA_%D7%94%D7%90%D7%9C%D7%A3">ויקיטקסט</a>
+<ol>
+{% for book in files %}
+<li><a href="book/{{book}}">{{book}}</a></li>
+{% endfor %}
+</ol>
         <h2>TODOs</h2>
         <a href="https://github.com/eranroz/nli-wiki/tree/master/web">See here</a>
         <hr>
